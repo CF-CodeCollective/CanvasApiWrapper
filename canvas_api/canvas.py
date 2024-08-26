@@ -1,4 +1,7 @@
 import requests
+import urllib.parse
+from canvas_api.objects import *
+from canvas_api.services import *
 
 class Canvas():
     '''Root class for interacting with the Canvas API'''
@@ -15,7 +18,7 @@ class Canvas():
         data_string = ""
         for key, value in dict:
             data_string += f"{key}={value}&"
-        data_string = data_string.strip().rstrip("&")
+        data_string = urllib.parse.quote(data_string.strip().rstrip("&"))
         return requests.post(address, headers=dict(Authorization=f"Bearer {self.access_token}"), data=data_string)
 
     def raw_put(self, address: str, data: dict):
@@ -23,3 +26,6 @@ class Canvas():
 
     def raw_delete(self, address: str, data: dict):
         pass
+
+    def get_object_requester(self):
+        return object_requester.object_requester(self.domain_address, self.access_token)

@@ -1,7 +1,7 @@
 from canvas_enroller_minimal import EnrollmentService
 
 data_file = open("canvas-token.txt")
-token, address, course, id = data_file.readlines()
+token, address, course, id, _ = data_file.readlines()
 data_file.close()
 
 token = token.strip()
