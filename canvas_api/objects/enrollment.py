@@ -142,10 +142,10 @@ class enrollment():
     # exists, the value will be null. (applies only to student enrollments, and
     # only available in course endpoints)
     current_period_unposted_final_grade = None
-    
+
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
-            if user.__dict__.__contains__(key):
+            if enrollment.__dict__.__contains__(key):
                 self.__dict__.update({ key : value })
             else:
                 print(f"No matching field '{key}'")
