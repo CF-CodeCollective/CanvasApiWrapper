@@ -38,7 +38,4 @@ class user():
 
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
-            if user.__dict__.__contains__(key):
-                self.__dict__.update({ key : value })
-            else:
-                print(f"No matching field '{key}'")
+            self.__dict__.update({ key : value })

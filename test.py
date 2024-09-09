@@ -13,7 +13,7 @@ cvs = canvas.Canvas(address, token)
 
 object_requester = cvs.get_object_requester()
 
-status_code, user = object_requester.get_user(f"sis_user_id:{id}")
+'''status_code, user = object_requester.get_user(f"sis_user_id:{id}")
 print(status_code)
 print(user)
 if status_code == 200:
@@ -29,4 +29,9 @@ print(status_code)
 if status_code == 200:
     print(enrollment.user_id)
     print(enrollment.enrollment_state)
-    print(enrollment.created_at)
+    print(enrollment.created_at)'''
+
+status_code, users = object_requester.course_get_students(course)
+if status_code == 200:
+    for user in users:
+        print(user.short_name)
