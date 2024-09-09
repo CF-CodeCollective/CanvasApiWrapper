@@ -1,1 +1,1 @@
-__all__ = ["object_requester"]
+__all__ = ["object_requester", "enrollment_service"]

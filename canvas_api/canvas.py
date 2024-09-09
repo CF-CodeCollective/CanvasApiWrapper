@@ -29,3 +29,6 @@ class Canvas():
 
     def get_object_requester(self):
         return object_requester.object_requester(self.domain_address, self.access_token)
+    
+    def get_enrollment_service(self):
+        return enrollment_service.enrollment_service(self.domain_address, self.access_token)
